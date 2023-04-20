@@ -71,7 +71,19 @@
                                                              <div class="form-group form-default form-static-label">
 	                                                            <select class="form-control" aria-label="Default select example" name="perfil" id="perfil" >
 																  <option disabled="disabled" >[ Selecione o perfil do Cargo]</option>
-																  <option value="ADMIN">AdministraÁ„o</option>
+																  <option value="ADMIN"<%
+																		  
+																  ModelLogin modelLogin = (ModelLogin)request.getAttribute("modelLogin");
+																  
+																  System.out.println(modelLogin.getPerfil());
+																  
+																  if(modelLogin != null &&  modelLogin.getPerfil().equals("ADMIN")){
+																	  
+																	  out.print(" ");
+																	  out.print("selected=\"selected\"");
+																	  out.print(" ");
+																  } %>>Administra√ß√£o</option>
+									    
 																  <option value="SECRETARIO">Secretariado</option>
 																  <option value="AUXILIAR">Auxiliar</option>
 																  
@@ -104,7 +116,7 @@
                                                             </div>
                                                             </div>
                                                             </div>
-                                                            <span id="msg">${msg}</span> <!-- o $ È para mostra a mensagem de redirecionamento do jsp , ja o id È a mensagem que vem do javascript -->
+                                                            <span id="msg">${msg}</span> <!-- o $ √© para mostra a mensagem de redirecionamento do jsp , ja o id √© a mensagem que vem do javascript -->
                                                             
                                                            <div style="height: 300px; overflow: scroll;">
 															<table class="table" id="tabelaresultadosview">
@@ -148,7 +160,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pesquisa de usu·rio</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Pesquisa de usu√°rio</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -225,7 +237,7 @@
     	     }
     	     
     	 }).fail(function(xhr, status, errorThrown){
-    	    alert('Erro ao buscar usu·rio por nome: ' + xhr.responseText);
+    	    alert('Erro ao buscar usu√°rio por nome: ' + xhr.responseText);
     	 });
     	
     	
