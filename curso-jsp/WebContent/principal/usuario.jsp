@@ -71,18 +71,7 @@
                                                              <div class="form-group form-default form-static-label">
 	                                                            <select class="form-control" aria-label="Default select example" name="perfil" id="perfil" >
 																  <option disabled="disabled" >[ Selecione o perfil do Cargo]</option>
-																  <option value="ADMIN"<%
-																		  
-																  ModelLogin modelLogin = (ModelLogin)request.getAttribute("modelLogin");
-																  
-																  System.out.println(modelLogin.getPerfil());
-																  
-																  if(modelLogin != null &&  modelLogin.getPerfil().equals("ADMIN")){
-																	  
-																	  out.print(" ");
-																	  out.print("selected=\"selected\"");
-																	  out.print(" ");
-																  } %>>Administração</option>
+																  <option value="ADMIN">Administração</option>
 									    
 																  <option value="SECRETARIO">Secretariado</option>
 																  <option value="AUXILIAR">Auxiliar</option>
